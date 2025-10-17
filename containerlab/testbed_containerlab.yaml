@@ -1,0 +1,40 @@
+devices:
+  clab-test_network-ceos1:
+    connections:
+      cli:
+        ip: 172.20.20.2
+        protocol: ssh
+    credentials:
+      default:
+        password: admin
+        username: admin
+      enable:
+        password: admin
+    os: eos
+    type: eos
+  clab-test_network-ceos2:
+    connections:
+      cli:
+        ip: 172.20.20.4
+        protocol: ssh
+    credentials:
+      default:
+        password: admin
+        username: admin
+      enable:
+        password: admin
+    os: eos
+    type: eos
+  clab-test_network-ceos3:
+    connections:
+      cli:
+        ip: 172.20.20.3
+        protocol: ssh
+    credentials:
+      default:
+        password: admin
+        username: admin
+      enable:
+        password: admin
+    os: eos
+    type: eos

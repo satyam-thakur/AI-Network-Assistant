@@ -1,0 +1,27 @@
+name: test_network
+
+topology:
+  nodes:
+    ceos1:
+      kind: arista_ceos
+      image: ceos:4.32.0F
+      startup-config: ./backup_configs/ceos1/ceos1.cfg
+      binds:
+       - ./backup_configs/ceos1/ceos1.cfg:/flash/startup-config
+    ceos2:
+      kind: arista_ceos
+      image: ceos:4.32.0F
+      startup-config: ./backup_configs/ceos2/ceos2.cfg
+      binds:
+        - ./backup_configs/ceos2/ceos2.cfg:/flash/startup-config
+    ceos3:
+      kind: arista_ceos
+      image: ceos:4.32.0F
+      startup-config: ./backup_configs/ceos3/ceos3.cfg
+      binds:
+        - ./backup_configs/ceos3/ceos3.cfg:/flash/startup-config
+
+  links:
+    - endpoints: ["ceos1:eth1", "ceos2:eth1"]
+    - endpoints: ["ceos2:eth2", "ceos3:eth1"]
+    - endpoints: ["ceos3:eth2", "ceos1:eth2"]

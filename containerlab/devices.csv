@@ -1,0 +1,4 @@
+hostname,ip,protocol,username,password,os
+clab-test_network-ceos1,172.20.20.2,ssh,admin,admin,eos
+clab-test_network-ceos2,172.20.20.4,ssh,admin,admin,eos
+clab-test_network-ceos3,172.20.20.3,ssh,admin,admin,eos
