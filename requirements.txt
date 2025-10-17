@@ -1,0 +1,5 @@
+google-generativeai
+fastmcp>=2.12.0
+uvicorn>=0.35.0
+pyats[full]
+python-dotenv>=1.0.0
