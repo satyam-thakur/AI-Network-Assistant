@@ -1,0 +1,17 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Containerlab
+*clab-test_*
+*yaml.annotations.json
+
+# Terraform
+*.terraform.lock.hcl
+*.terraform/
+*.tfstate*
+# *.tfvars
+
