@@ -11,4 +11,4 @@ volume_size = 25
 volume_type = "gp3"
 
 # Instance State (running or stopped)
-instance_state = "stopped"
+instance_state = "running"
