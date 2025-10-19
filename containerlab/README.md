@@ -65,10 +65,20 @@ This installs:
 
 ### Deploy the Lab
 
-Start all devices and links defined in the topology:
+**Prerequisites:** Import the cEOS Docker image before deployment.
+
+1. **Download the cEOS image** manually from [Containerlab cEOS Guide](https://containerlab.dev/manual/kinds/ceos/)
+
+2. **Import the container image** and tag it with the required name:
 
 ```bash
-sudo containerlab deploy -t topology.clab.yaml
+docker import cEOS64-lab-4.32.0F.tar.xz ceos:4.32.0F
+```
+
+3. **Deploy the lab** - Start all devices and links defined in the topology:
+
+```bash
+containerlab deploy -t topology.clab.yaml
 ```
 
 Output shows:
@@ -81,7 +91,7 @@ Output shows:
 View running lab status:
 
 ```bash
-sudo containerlab inspect -t topology.clab.yaml
+containerlab inspect -t topology.clab.yaml
 ```
 
 ### Access Device Console
@@ -89,7 +99,7 @@ sudo containerlab inspect -t topology.clab.yaml
 Connect to a device's CLI:
 
 ```bash
-sudo docker exec -it clab-test_network-ceos1 Cli
+docker exec -it clab-test_network-ceos1 Cli
 ```
 
 Replace `ceos1` with `ceos2` or `ceos3` for other devices.
@@ -99,7 +109,7 @@ Replace `ceos1` with `ceos2` or `ceos3` for other devices.
 Stop and remove all lab containers:
 
 ```bash
-sudo containerlab destroy -t topology.clab.yaml
+containerlab destroy -t topology.clab.yaml
 ```
 
 **Note:** This does NOT delete startup configs in `backup_configs/`.
@@ -109,7 +119,7 @@ sudo containerlab destroy -t topology.clab.yaml
 Export running configs from devices:
 
 ```bash
-sudo containerlab save -t topology.clab.yaml
+containerlab save -t topology.clab.yaml
 ```
 
 Configs are saved to the directories specified in the topology file.
@@ -119,7 +129,7 @@ Configs are saved to the directories specified in the topology file.
 Generate a topology diagram:
 
 ```bash
-sudo containerlab graph -t topology.clab.yaml
+containerlab graph -t topology.clab.yaml
 ```
 
 ---
